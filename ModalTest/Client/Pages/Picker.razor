@@ -1,0 +1,21 @@
+﻿@using MudBlazor
+
+<div class="simple-form">
+    <div class="form-group">
+        <MudText Typo="Typo.h3">Date Picker</MudText>
+        <MudText Typo="Typo.h5">Pick a Date.</MudText>
+        <MudDatePicker Label="Choose Date" @bind-Date="date"/>
+        <MudButton @onclick="Close" Variant="Variant.Filled" Color="Color.Primary">Pick</MudButton>
+        <MudButton @onclick="Cancel" Variant="Variant.Filled" Color="Color.Secondary">Cancel</MudButton>
+    </div>
+</div>
+
+@code {
+    DateTime? date = DateTime.Today;
+
+    [CascadingParameter] BlazoredModalInstance ModalInstance { get; set; }
+
+    async Task Close() =>  await ModalInstance.CloseAsync(ModalResult.Ok(true));
+    async Task Cancel() => await ModalInstance.CancelAsync();
+
+}

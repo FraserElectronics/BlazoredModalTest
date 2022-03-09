@@ -1,0 +1,27 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    [CascadingParameter] 
+    public IModalService Modal { get; set; }
+
+    private void ShowModal()
+    {
+        var opts = new ModalOptions()
+        {
+            Class = "aqua-modal-class"
+        };
+
+        Modal.Show<Picker>( "Picker", opts );
+    }
+
+    private void IncrementCount()
+    {
+        ShowModal();
+    }
+}
