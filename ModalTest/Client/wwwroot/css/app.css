@@ -72,6 +72,6 @@ a, .btn-link {
     border-radius: 12px;
     border: 1px solid #1861ac;
     padding: 0.5rem;
-    z-index: 100;
+    z-index: 102;
     box-shadow: 0 15px 15px rgba(0,0,0,.75);
 }
